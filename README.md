@@ -1,2 +1,2 @@
 # Simple-Calculator
-A MDAS Calculator that will solve simple mathematics.
+An MDAS Calculator that will solve simple mathematics.
