@@ -1,0 +1,64 @@
+using System;
+public class Calculator
+{
+    public static void Main(string[] args)
+    {
+        string operation;
+        string initialInputOne;
+        string initialInputTwo;
+        double inputOne;
+        double inputTwo;
+        double result = 0;
+
+        Console.WriteLine("Simple Calculator (C# version)");
+        Console.Write("Input your first number: ");
+        initialInputOne = Console.ReadLine();
+
+        if(double.TryParse(initialInputOne, out inputOne) == true)
+        {
+            Console.Write("Input your second number: ");
+            initialInputTwo = Console.ReadLine();
+
+            if(double.TryParse(initialInputTwo, out inputTwo) == true)
+            {
+                Console.WriteLine("Please select the operation by typing the symbol. Press enter key when done.");
+                Console.WriteLine("(+) Addition\n(-) Subtraction\n(*) Multiplication\n(/) Division");
+                Console.Write("Type here: ");
+                operation = Console.ReadLine();
+
+                if(operation == "+")
+                {
+                    result = inputOne + inputTwo;
+                }
+                else if(operation == "-")
+                {
+                    result = inputOne - inputTwo;
+                }
+                else if(operation == "*")
+                {
+                    result = inputOne * inputTwo;
+                }
+                else if(operation == "/")
+                {
+                    result = inputOne / inputTwo;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input, please choose the only available operation (MDAS).");
+                    Environment.Exit(0);
+                }
+
+                Console.WriteLine("Output:");
+                Console.WriteLine(inputOne + " " + operation + " " + inputTwo + " = " + "{0:#,0.0000}" + ".", result);
+            }
+            else
+            {
+                Console.WriteLine("Invalid input, please enter a numeric value.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input, please enter a numeric value.");
+        }
+    }
+} //programmed by Rowell Castro (Macharmly)
